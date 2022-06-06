@@ -1,4 +1,4 @@
-#include "/Users/selihovkinaekaterina/cpp-template/src/lib/polynom.hpp"
+#include "src/lib/polynom.hpp"
 #include <iostream>
 #include <vector>
 #include "gtest/gtest.h"
@@ -19,8 +19,8 @@ TEST(Polynomal_Should, Return_Polynimal){
         }
     }
     Polynom<double> intemp(first, koef);
-    std::string actual = intemp.print(coef);
-    std::string expected = "8x^4 + 6x^3 + 4x^2 + 2x^1";
+    std::string actual = intemp.print(first, koef);
+    std::string expected = "8x^4 + 6x^3 + 4x^2 + 2x^1 + :";
     EXPECT_EQ(expected, actual);
 }
 TEST(Polynomal2_Should, Return_Polynimal2){
@@ -38,8 +38,8 @@ TEST(Polynomal2_Should, Return_Polynimal2){
         }
     }
     Polynom<double> intemp(first, koef);
-    std::string actual = intemp.print(coef);
-    std::string expected = "6x^3 + 4x^2 + 2x^1";
+    std::string actual = intemp.print(first, koef);
+    std::string expected = "6x^3 + 4x^2 + 2x^1 + :";
     EXPECT_EQ(expected, actual);
 }
 TEST(Polynomal3_Should, Return_Polynimal3){
@@ -54,7 +54,7 @@ TEST(Polynomal3_Should, Return_Polynimal3){
     koef[2]=4;
     koef[3]=5;
     Polynom<double> intemp(first, koef);
-    std::string actual = intemp.print(coef);
+    std::string actual = intemp.print(first, koef);
     std::string expected = "5x^3 + 4x^2";
     EXPECT_EQ(expected, actual);
 }
